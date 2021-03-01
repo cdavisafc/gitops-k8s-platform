@@ -22,7 +22,7 @@ metadata:
 spec:
   user: ubuntu
   controlPlaneMachineCount: "1"
-  workerMachineCount: "1"
+  workerMachineCount: "2"
   cri:
     kind: docker
     package: docker-ce
