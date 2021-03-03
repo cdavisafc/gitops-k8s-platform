@@ -78,3 +78,30 @@ spec:
   public:
     address: 34.222.207.137
     port: 22
+---
+apiVersion: cluster.x-k8s.io/v1alpha3
+kind: Machine
+metadata:
+  labels:
+    set: worker
+  name: worker-tsb5s
+spec:
+  clusterName: example
+  bootstrap: {}
+  version: 1.18.9
+  infrastructureRef:
+    apiVersion: cluster.weave.works/v1alpha3
+    kind: ExistingInfraMachine
+    name: worker-tsb5s-provider
+---
+apiVersion: cluster.weave.works/v1alpha3
+kind: ExistingInfraMachine
+metadata:
+  name: worker-tsb5s-provider
+spec:
+  private:
+    address: 172.31.57.203
+    port: 22
+  public:
+    address: 44.242.147.95
+    port: 22
